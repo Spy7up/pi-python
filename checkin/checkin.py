@@ -35,8 +35,10 @@ def job():
     resp_json = json.loads(response.text)
     code = resp_json["code"]
     message = resp_json["message"]
+    list_data = resp_json["list"]
+    first_item = list_data[0]  # 获取列表的第一项
     with open("log.log", "a", encoding="utf-8") as f:
-        f.write("[%s] [code:%s] [message:%s]\n" % (time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())), code, message))
+        f.write("[%s] [code:%s] [message:%s] [current_point:%s] \n" % (time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())), code, message, first_item["balance"]))
 
 def get_auth():
     with open("auth.json", "r") as f:

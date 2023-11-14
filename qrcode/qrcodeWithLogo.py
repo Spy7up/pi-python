@@ -20,7 +20,7 @@ def getQRcode(data, file_name):
     img = Image.open("myQrCode.png").convert('RGBA')
 
     # 添加logo，打开logo照片
-    icon = Image.open("white.png")
+    icon = Image.open("logo.jpg")
     icon = icon.convert('RGBA')
     # 获取图片的宽高
     img_w, img_h = img.size
@@ -46,4 +46,4 @@ def getQRcode(data, file_name):
 
 
 if __name__ == '__main__':
-    getQRcode("https://community.dongfeng-nissan.com.cn/h5/ToDiscussDetails?id=650", 'myQrCode.png')
+    getQRcode("https://h5iov.venucia.com/common/msg/msginfo.html?id=77989&appCode=nissan&projectType=nissan&jumpData=mweZ&type=1&jumpType=2&version=3.0.0", 'myQrCode.png')
